@@ -1,18 +1,20 @@
 {
   "private": true,
-  "name": "my-nextron-app",
-  "description": "My application description",
+  "name": "Metadefender Kiosk Toolkit",
+  "description": "Kiosk Toolkit",
   "version": "1.0.0",
-  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "author": "OPSWAT",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
     "build": "nextron build",
+    "build:win": "env-cmd -f .env.production npm run build",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "electron-serve": "^1.1.0",
     "electron-store": "^8.1.0",
+    "env-cmd": "^10.1.0",
     "remixicon": "^2.5.0"
   },
   "devDependencies": {

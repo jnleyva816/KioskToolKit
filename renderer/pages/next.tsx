@@ -4,6 +4,10 @@ import { Typography, Button } from '@mui/material'
 import {styled} from '@mui/material';
 import Sidebar from '../components/Sidebar';
 import Link from '../components/Link';
+const { shell, app } = require('electron');
+;
+
+
 
 const Root = styled('div')(({theme}) => {
     return {
@@ -116,7 +120,11 @@ const RestoreButtonBox= styled(Box)(({theme}) => {
 });
 
 
+
 function Next() {
+    function helloWorld(){
+       alert("Your are about to disable services on your computer, are you sure you want to proceed?")
+    }
 
     return (
         <Root>
@@ -135,7 +143,7 @@ function Next() {
             <ContentTitle variant='body1'>
             Disable Servies by Tier:
             </ContentTitle>
-            <StyledButton variant="contained">Tier 1</StyledButton>
+            <StyledButton variant="contained" onClick={helloWorld}>Tier 1</StyledButton>
             <StyledButton variant="contained">Tier 2</StyledButton>
             <StyledButton variant="contained">Tier 3</StyledButton>
             </DisbaleButtonBox>

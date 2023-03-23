@@ -1,38 +1,43 @@
-<p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
+## OPSWAT Metadefender Kiosk Toolkit
 
-## Usage
-
-### Create an App
+### To run in devlopment
 
 ```
+
+1.git clone repository 
+
+2. cd KioskToolKit 
+
+3. $ npm i 
+
+4. $npm run dev 
+
 # with npx
+
 $ npx create-nextron-app my-app --example with-material-ui
 
-# with yarn
-$ yarn create nextron-app my-app --example with-material-ui
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-material-ui
-```
-
-### Install Dependencies
 
 ```
-$ cd my-app
 
-# using yarn or npm
-$ yarn (or `npm install`)
-
-# using pnpm
-$ pnpm install --shamefully-hoist
-```
-
-### Use it
+### To run in production 
 
 ```
-# development mode
-$ yarn dev (or `npm run dev` or `pnpm run dev`)
 
-# production build
-$ yarn build (or `npm run build` or `pnpm run build`)
+1.git clone repository 
+
+2. cd KioskToolKit 
+
+3. $ npm i 
+
+4. $npm run build:win
+
+5. open .exe file
+
+# with npx
+
+$ npx create-nextron-app my-app --example with-material-ui
+
+
 ```
+
+
