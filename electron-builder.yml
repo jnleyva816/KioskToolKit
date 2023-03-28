@@ -1,6 +1,7 @@
 appId: com.example.nextron
-productName: My Nextron App
-copyright: Copyright © 2018 Yoshihide Shiono
+productName: OPSWAT - Kiosk Toolkit
+copyright: Copyright © 2023 Joshua Leyva
+extraFiles: scripts
 directories:
   output: dist
   buildResources: resources

@@ -5,7 +5,10 @@ import {styled} from '@mui/material';
 import Sidebar from '../components/Sidebar';
 import Link from '../components/Link';
 const { shell, app } = require('electron');
-;
+const path = require('path');
+const os = require('os');
+import {PowerShell} from 'node-powershell'
+import Head from 'next/head';
 
 
 
@@ -54,7 +57,7 @@ const ButtonBox= styled(Box)(({theme}) => {
         marginLeft: 'auto',
         marginRight: 'auto',
         color: 'white',
-        backgroundColor: "#282828",
+        backgroundColor: "rgba(10, 10, 10, .4);",
         paddingTop: '40px',
         width: '80%',
         height: "80%",
@@ -90,7 +93,7 @@ const DisbaleButtonBox= styled(Box)(({theme}) => {
         marginLeft: 'auto',
         marginRight: 'auto',
         color: 'white',
-        backgroundColor: "#282828",
+        backgroundColor: "rgba(10, 10, 10, 0);",
         width: '80%',
         height: "10%",
         borderRadius: '20px',
@@ -110,7 +113,7 @@ const RestoreButtonBox= styled(Box)(({theme}) => {
         marginLeft: 'auto',
         marginRight: 'auto',
         color: 'white',
-        backgroundColor: "#282828",
+        backgroundColor: "rgba(10, 10, 10, 0)",
         width: '80%',
         height: "10%",
         borderRadius: '20px',
@@ -119,14 +122,37 @@ const RestoreButtonBox= styled(Box)(({theme}) => {
     };
 });
 
+var loc = process.cwd();
+
+// C:\Users\Josh\Desktop\Toolkit\KioskToolKit\scripts\helloworld.bat
+
 
 
 function Next() {
-    function helloWorld(){
-       alert("Your are about to disable services on your computer, are you sure you want to proceed?")
+
+    
+    function Tier1(){
+        shell.openPath(loc + '\\scripts\\Tier1.bat')
+    
     }
 
+    function Tier2(){
+        shell.openPath(loc + '\\scripts\\helloworld.ps1')
+     }
+
+     function Tier3(){
+        shell.openPath(loc + '\\scripts\\helloworld.bat')
+     }
+
+     function Restore(){
+        shell.openPath(loc + '\\scripts\\Restore.bat')
+     }
+
     return (
+        <React.Fragment>
+        <Head>
+        <title>Hardened Image Scripts - MetaDefender Kiosk Toolkit</title>
+        </Head>
         <Root>
         <TitleBox>
             <Title variant='h6'>
@@ -143,21 +169,23 @@ function Next() {
             <ContentTitle variant='body1'>
             Disable Servies by Tier:
             </ContentTitle>
-            <StyledButton variant="contained" onClick={helloWorld}>Tier 1</StyledButton>
-            <StyledButton variant="contained">Tier 2</StyledButton>
-            <StyledButton variant="contained">Tier 3</StyledButton>
+            <StyledButton variant="contained" onClick={Tier1}>Tier 1</StyledButton>
+            <StyledButton variant="contained" onClick={Tier2}>Tier 2</StyledButton>
+            <StyledButton variant="contained" onClick={Tier3}>Tier 3</StyledButton>
             </DisbaleButtonBox>
             <RestoreButtonBox>
             <ContentTitle variant='body1'>
             Restore Services:
             </ContentTitle>
-            <StyledButton variant="contained">Restore</StyledButton>
+            <StyledButton variant="contained" onClick={Restore}>Restore</StyledButton>
             </RestoreButtonBox>
 
         </ButtonBox>
        
         
     </Root>
+        </React.Fragment>
+       
     );
 };
 

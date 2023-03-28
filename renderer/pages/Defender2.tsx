@@ -15,14 +15,6 @@ const Root = styled('div')(({theme}) => {
     };
 });
 
-const StyledButton =styled(Button)(({theme}) =>({
-    marginLeft: '10px',
-    borderRadius: '25px',
-    width: '225px',
-    marginTop:'30px',
-    fontSize: '13px',
-    backgroundColor: '#2672fB'
-}));
 
 const TitleBox= styled(Box)(({theme}) => {
     return {
@@ -43,46 +35,43 @@ const Title= styled(Typography)(({theme}) => {
     };
 });
 
-const ButtonBox= styled(Box)(({theme}) => {
+const ContentTitle= styled(Typography)(({theme}) => {
+  return {
+      fontSize:'24px',
+      fontWeight: '300',
+      color:'white',
+
+  };
+});
+
+const ContentBox= styled(Box)(({theme}) => {
     return {
-        display:'flex',
-        flexDirection: 'column',
-        alignItems:'center',
         marginLeft: 'auto',
         marginRight: 'auto',
         color: 'white',
-        backgroundColor: "rgba(10, 10, 10, .2);",
-        paddingTop: '40px',
-        width: '50%',
-        height: "70%",
+        backgroundColor: " rgba(10, 10, 10, .2);",
+        paddingTop: '20px',
+        width: '80%',
+        height: "80%",
         borderRadius: '20px',
-
-
-        
     };
 });
+const ContentBoxLeft= styled(Box)(({theme}) => {
+  return {
+      position: "relative",
+      backgroundColor: "none",
+      width: '50%',
+      height: "80%",
+      borderRadius: '0px',
+      top: '10px',
+      left: '20px',
+      borderRight: '.5px solid white'
+  };
+});
 
-const SectionTitle = styled(Typography)(({theme}) => {
-    return {
-        fontSize:'24px',
-        fontWeight: '100',
-        color:'white',
-
-    };
-})
 
 
 const Defender = () => {
-
-    var loc = process.cwd();
-    const {shell} = require('electron')
-    function Enable(){
-        shell.openPath(loc + '\\scripts\\Enable.bat')    
-    }
-    function Disable(){
-        shell.openPath(loc + '\\scripts\\Disable.bat')    
-    }
-    
   return (
     <React.Fragment>
         <Head>
@@ -95,13 +84,12 @@ const Defender = () => {
             </Title>
         </TitleBox>
         <Sidebar/>
-        <ButtonBox >
-            <SectionTitle variant='h6'>
-            Disable/Enable Windows Defender
-            </SectionTitle>
-            <StyledButton variant="contained" onClick={Enable}>Enable Windows Defender</StyledButton>
-            <StyledButton variant="contained" onClick={Disable}>Disable Windows Defender</StyledButton>
-        </ButtonBox>
+        <ContentBox >
+          <ContentTitle>Windows Defender</ContentTitle>
+          <ContentBoxLeft>
+
+          </ContentBoxLeft>
+        </ContentBox>
        
         
     </Root>

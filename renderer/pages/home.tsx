@@ -4,6 +4,7 @@ import { Typography, Button } from '@mui/material'
 import {styled} from '@mui/material';
 import Sidebar from '../components/Sidebar';
 import Link from '../components/Link';
+import Head from 'next/head';
 
 const Root = styled('div')(({theme}) => {
     return {
@@ -35,8 +36,8 @@ const TitleBox= styled(Box)(({theme}) => {
 
 const Title= styled(Typography)(({theme}) => {
     return {
-        fontSize:'16px',
-        fontWeight: '100',
+        fontSize:'20px',
+        fontWeight: '300',
         color:'white',
 
     };
@@ -50,20 +51,18 @@ const SectionBox= styled(Box)(({theme}) => {
         marginLeft: 'auto',
         marginRight: 'auto',
         color: 'white',
-        backgroundColor: "#282828",
+        backgroundColor: "rgba(10, 10, 10, .4);",
         paddingTop: '40px',
         width: '80%',
         height: "80%",
-        borderRadius: '20px'
-
-        
+        borderRadius: '20px'       
     };
 });
 
 const SectionTitle = styled(Typography)(({theme}) => {
     return {
         fontSize:'24px',
-        fontWeight: '200',
+        fontWeight: '300',
         color:'white',
 
     };
@@ -72,7 +71,7 @@ const SectionTitle = styled(Typography)(({theme}) => {
 
 const SectionContent = styled(Typography)(({theme}) => {
     return {
-        fontSize:'16px',
+        fontSize:'18px',
         fontWeight: '200',
         color:'white',
 
@@ -80,8 +79,13 @@ const SectionContent = styled(Typography)(({theme}) => {
 })
 
 const home = () => {
+
   return (
-    <Root>
+    <React.Fragment>
+        <Head>
+        <title>Dashboard - MetaDefender Kiosk Toolkit</title>
+      </Head>
+        <Root>
         <TitleBox>
             <Title variant='h6'>
             OPSWAT METADEFENDER KIOSK TOOLKIT
@@ -89,7 +93,7 @@ const home = () => {
         </TitleBox>
         <Sidebar/>
         <SectionBox>
-        <SectionTitle variant='subtitle1' > Welcome to the Metadefender OPSWAT Kiosk Toolkit.</SectionTitle>
+        <SectionTitle variant='subtitle1' > Welcome to the OPSWAT Metadefender Kiosk Toolkit.</SectionTitle>
         <br/>
         <SectionContent variant='subtitle2'> This tool will be used to Disable/Enable Windows Defender.</SectionContent>
         <br/>
@@ -101,6 +105,8 @@ const home = () => {
        
         
     </Root>
+    </React.Fragment>
+    
   )
 }
 

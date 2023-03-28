@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "Metadefender Kiosk Toolkit",
+  "name": "Kiosk_Toolkit",
   "description": "Kiosk Toolkit",
   "version": "1.0.0",
   "author": "OPSWAT",
@@ -15,6 +15,7 @@
     "electron-serve": "^1.1.0",
     "electron-store": "^8.1.0",
     "env-cmd": "^10.1.0",
+    "node-powershell": "^5.0.1",
     "remixicon": "^2.5.0"
   },
   "devDependencies": {
