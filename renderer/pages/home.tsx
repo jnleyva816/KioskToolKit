@@ -54,8 +54,9 @@ const SectionBox= styled(Box)(({theme}) => {
         backgroundColor: "rgba(10, 10, 10, .4);",
         paddingTop: '40px',
         width: '80%',
-        height: "80%",
-        borderRadius: '20px'       
+        height: "60%",
+        borderRadius: '20px',
+        marginTop: '40px'     
     };
 });
 

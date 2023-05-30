@@ -23,11 +23,12 @@ const Root = styled('div')(({theme}) => {
 
 const StyledButton =styled(Button)(({theme}) =>({
     marginLeft: '10px',
-    borderRadius: '25px',
-    width: '115px',
-    marginTop:'0px',
-    fontSize: '13px',
-    backgroundColor: '#2672fB'
+    borderRadius: '5px',
+    width: '150px',
+    fontSize: '14px',
+    fontWeight: '400',
+    backgroundColor: '#2672fB',
+    height: '100px'
 }));
 
 const TitleBox= styled(Box)(({theme}) => {
@@ -42,8 +43,8 @@ const TitleBox= styled(Box)(({theme}) => {
 
 const Title= styled(Typography)(({theme}) => {
     return {
-        fontSize:'16px',
-        fontWeight: '200',
+        fontSize:'20px',
+        fontWeight: '300',
         color:'white',
 
     };
@@ -57,11 +58,11 @@ const ButtonBox= styled(Box)(({theme}) => {
         marginLeft: 'auto',
         marginRight: 'auto',
         color: 'white',
-        backgroundColor: "rgba(10, 10, 10, .4);",
+        backgroundColor: "rgba(10, 10, 10, .2)",
         paddingTop: '40px',
         width: '80%',
-        height: "80%",
-        borderRadius: '20px'
+        height: "90%",
+        borderRadius: '10px'
 
         
     };
@@ -70,7 +71,7 @@ const ButtonBox= styled(Box)(({theme}) => {
 const SectionTitle = styled(Typography)(({theme}) => {
     return {
         fontSize:'24px',
-        fontWeight: '100',
+        fontWeight: '400',
         color:'white',
 
     };
@@ -78,7 +79,7 @@ const SectionTitle = styled(Typography)(({theme}) => {
 const ContentTitle = styled(Typography)(({theme}) => {
     return {
         fontSize:'18px',
-        fontWeight: '100',
+        fontWeight: '300',
         color:'white',
 
     };
@@ -93,11 +94,12 @@ const DisbaleButtonBox= styled(Box)(({theme}) => {
         marginLeft: 'auto',
         marginRight: 'auto',
         color: 'white',
-        backgroundColor: "rgba(10, 10, 10, 0);",
+        backgroundColor: "rgba(10, 10, 10, 0)",
         width: '80%',
         height: "10%",
         borderRadius: '20px',
-        paddingTop: '50px'
+        paddingTop: '80px',
+        marginTop: '20px'
         
 
         
@@ -109,15 +111,17 @@ const RestoreButtonBox= styled(Box)(({theme}) => {
         display:'flex',
         flexDirection: 'row',
         alignItems:'center',
+        paddingLeft: '0px',
         justifyContent: 'space-evenly',
         marginLeft: 'auto',
         marginRight: 'auto',
         color: 'white',
         backgroundColor: "rgba(10, 10, 10, 0)",
         width: '80%',
-        height: "10%",
+        height: "60%",
         borderRadius: '20px',
-        marginTop: '60px'
+        marginTop: '40px',
+        paddingBottom: '40px'
         
     };
 });
@@ -166,18 +170,18 @@ function Next() {
             </SectionTitle>
             
             <DisbaleButtonBox>
-            <ContentTitle variant='body1'>
-            Disable Servies by Tier:
-            </ContentTitle>
-            <StyledButton variant="contained" onClick={Tier1}>Tier 1</StyledButton>
-            <StyledButton variant="contained" onClick={Tier2}>Tier 2</StyledButton>
-            <StyledButton variant="contained" onClick={Tier3}>Tier 3</StyledButton>
+                <ContentTitle variant='body1'>
+                    Disable Servies by Tier:
+                </ContentTitle>
+                <StyledButton variant="contained" onClick={Tier1}>Tier 1</StyledButton>
+                <StyledButton variant="contained" onClick={Tier2}>Tier 2</StyledButton>
+                <StyledButton variant="contained" onClick={Tier3}>Tier 3</StyledButton>
             </DisbaleButtonBox>
             <RestoreButtonBox>
-            <ContentTitle variant='body1'>
-            Restore Services:
-            </ContentTitle>
-            <StyledButton variant="contained" onClick={Restore}>Restore</StyledButton>
+                <ContentTitle variant='body1'>
+                    Restore Services:
+                </ContentTitle>
+                <StyledButton variant="contained" onClick={Restore}>Restore</StyledButton>
             </RestoreButtonBox>
 
         </ButtonBox>

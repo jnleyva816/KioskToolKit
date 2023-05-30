@@ -51,7 +51,6 @@ const Sidebar = () => {
         <StyledLink href="/home" title="Dashboard"><i className="ri-home-line"></i></StyledLink> 
         <StyledLink href="/Defender" title="Windows Defender Remover"><i className="ri-shield-check-line"></i></StyledLink> 
         <StyledLink href="/next" title="Hardened image scripts"><i className="ri-u-disk-line"></i></StyledLink> 
-        <StyledLink href="/Defender2" title="Hardened image scripts"><i className="ri-u-disk-line"></i></StyledLink> 
     </Bar>
         
 
